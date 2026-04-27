@@ -5,3 +5,6 @@ seaborn
 scipy
 statsmodels
 jupyter
+scikit-learn
+ipykernel
+pathlib
