@@ -1,17 +1,24 @@
-# Tableau Dashboard Links
+# Tableau Dashboards
 
-Use this file to store the final public links for your Tableau deliverables.
+The F1 Sponsorship Analytics suite consists of three interactive dashboards designed for different levels of decision-making.
 
-## Dashboard Details
+## Public Access Link
+All dashboards are published on Tableau Public and can be accessed here:
+👉 **[F1 Sponsorship Analytics Suite](https://public.tableau.com/app/profile/kushagra.maheshwari4048/vizzes)**
 
-| Item | Link | Notes |
-|---|---|---|
-| Tableau Public Dashboard | _Paste URL here_ | _Main submission link_ |
-| Workbook / Story Link | _Paste URL here if applicable_ | _Optional_ |
-| Demo Recording | _Paste URL here if applicable_ | _Optional_ |
+## Dashboard Overview
 
-## Screenshot Checklist
+### 1. F1 Constructor Investment Scorecard (Executive)
+- **Objective:** "Which team should I sponsor?"
+- **Key Features:** Growth ROI vs Consistency Scatter Plot, Investment Score Ranking.
+- **Audience:** Corporate CMOs and Brand Managers.
 
-- Add exported dashboard screenshots to `tableau/screenshots/`
-- Use clear file names such as `executive_view.png` and `regional_drilldown.png`
-- Make sure screenshots match the final public dashboard
+### 2. Risk-Adjusted Investment Portfolio Matrix (Portfolio)
+- **Objective:** "How do I build a diversified F1 sponsorship portfolio?"
+- **Key Features:** Risk vs Return Scatter (Efficient Frontier), Momentum Trend Bar, Volatility Score.
+- **Audience:** Investment Managers and Enterprise CMOs.
+
+### 3. Operational Excellence & Race Craft Analytics (Operational)
+- **Objective:** "Which teams have the best operational execution?"
+- **Key Features:** Pit Efficiency vs Consistency, DNF Reliability Trend Waterfall, Pit Strategy Pie Chart.
+- **Audience:** Technical Strategists and Performance Analysts.
