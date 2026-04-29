@@ -1,35 +1,8 @@
-# NST DVA Capstone 2 - Project Repository
+# F1 Constructor Sponsorship & Investment ROI Analytics
+## NST DVA Capstone 2 - Project Repository
 
 > **Newton School of Technology | Data Visualization & Analytics**
-> A 2-week industry simulation capstone using Python, GitHub, and Tableau to convert raw data into actionable business intelligence.
-
----
-
-## Before You Start
-
-1. Rename the repository using the format `SectionName_TeamID_ProjectName`.
-2. Fill in the project details and team table below.
-3. Add the raw dataset to `data/raw/`.
-4. Complete the notebooks in order from `01` to `05`.
-5. Publish the final dashboard and add the public link in `tableau/dashboard_links.md`.
-6. Export the final report and presentation as PDFs into `reports/`.
-
-### Quick Start
-
-If you are working locally:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-jupyter notebook
-```
-
-If you are working in Google Colab:
-
-- Upload or sync the notebooks from `notebooks/`
-- Keep the final `.ipynb` files committed to GitHub
-- Export any cleaned datasets into `data/processed/`
+> A data-driven industry simulation using Python and Tableau to identify high-value sponsorship opportunities in Formula 1's Modern Hybrid Era.
 
 ---
 
@@ -37,39 +10,39 @@ If you are working in Google Colab:
 
 | Field | Details |
 |---|---|
-| **Project Title** | _To be filled by team_ |
-| **Sector** | _e.g. Retail, Finance, Healthcare, EdTech_ |
-| **Team ID** | _e.g. DVA-B1-T3_ |
-| **Section** | _To be filled by team_ |
-| **Faculty Mentor** | _To be filled by team_ |
+| **Project Title** | F1 Constructor Sponsorship & Investment ROI Analytics |
+| **Sector** | Sports Analytics & Corporate Sponsorship Intelligence |
+| **Team ID** | Section C — Group G13 |
+| **Section** | Section C |
+| **Faculty Mentor** | Archit Raj |
 | **Institute** | Newton School of Technology |
-| **Submission Date** | _To be filled by team_ |
+| **Submission Date** | April 29, 2026 |
 
 ### Team Members
 
 | Role | Name | GitHub Username |
 |---|---|---|
-| Project Lead | _Name_ | `github-handle` |
-| Data Lead | _Name_ | `github-handle` |
-| ETL Lead | _Name_ | `github-handle` |
-| Analysis Lead | _Name_ | `github-handle` |
-| Visualization Lead | _Name_ | `github-handle` |
-| Strategy Lead | _Name_ | `github-handle` |
-| PPT and Quality Lead | _Name_ | `github-handle` |
+| Project Lead | Priyanshu Tomar | `r0c0y` |
+| Data Lead | Anurag Kumar | `anurag-github` |
+| ETL Lead | Priyanshu Tomar | `r0c0y` |
+| Analysis Lead | Thejas | `thejas-github` |
+| Visualization Lead | Kushagra Maheshwari | `kushagra-github` |
+| Strategy Lead | Piyush | `piyush-github` |
+| PPT and Quality Lead | Aditya Srivastava | `aditya-github` |
 
 ---
 
 ## Business Problem
 
-_Describe the sector context, the decision-maker this project serves, and the core business challenge being addressed. Keep this to 3-5 sentences written in plain language, as if addressing a senior stakeholder._
+Formula 1 represents a $2.6 billion annual sponsorship market where brands seek global visibility and association with engineering excellence. However, not every team offers the same value; some are rising, while others are declining. This project addresses the lack of a structured, data-driven framework for sponsors to compare teams on expected return, preventing the misallocation of marketing budgets based on reputation rather than performance evidence.
 
 **Core Business Question**
 
-> _State the single main question your Tableau dashboard and Python analysis will answer._
+> Which F1 constructor teams represent the highest Growth ROI and Consistency for corporate sponsorship in the post-2014 Modern Hybrid Era?
 
 **Decision Supported**
 
-> _What action or decision will this analysis enable the stakeholder to take?_
+> This analysis enables Corporate CMOs and Investment Managers to allocate multi-million dollar sponsorship budgets based on risk-adjusted ROI scores, identifying "undervalued gems" before their market value peaks.
 
 ---
 
@@ -77,21 +50,21 @@ _Describe the sector context, the decision-maker this project serves, and the co
 
 | Attribute | Details |
 |---|---|
-| **Source Name** | _e.g. World Bank, data.gov.in, Kaggle (raw only)_ |
-| **Direct Access Link** | _Paste the direct download or access URL_ |
-| **Row Count** | _Must be greater than 5,000_ |
-| **Column Count** | _Must be greater than 8 meaningful columns_ |
-| **Time Period Covered** | _e.g. Jan 2019 to Dec 2023_ |
-| **Format** | _e.g. CSV, JSON, Excel_ |
+| **Source Name** | Ergast Developer API : Formula 1 Historical Database |
+| **Direct Access Link** | [http://ergast.com/mrd/](http://ergast.com/mrd/) |
+| **Row Count** | 4,626 (Master Table) / 701,433 (Raw) |
+| **Column Count** | 35 (Master Table) |
+| **Time Period Covered** | 2014 to 2024 (Modern Hybrid Era) |
+| **Format** | CSV |
 
 **Key Columns Used**
 
 | Column Name | Description | Role in Analysis |
 |---|---|---|
-| _column_1_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_2_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_3_ | _What it means_ | _Used for KPI / filter / segmentation_ |
-| _column_4_ | _What it means_ | _Used for KPI / filter / segmentation_ |
+| `points` | Championship points scored | Core KPI Input (Growth/Momentum) |
+| `positionOrder` | Final finishing classification | Used for Result Volatility Index |
+| `status` | Race finish status (Finished/DNF) | Reliability & Finish Rate Calculation |
+| `milliseconds` | Pit stop duration in ms | Operational Excellence Metric |
 
 For full column definitions, see [`docs/data_dictionary.md`](docs/data_dictionary.md).
 
@@ -101,9 +74,11 @@ For full column definitions, see [`docs/data_dictionary.md`](docs/data_dictionar
 
 | KPI | Definition | Formula / Computation |
 |---|---|---|
-| _e.g. Monthly Revenue Growth %_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
-| _e.g. Customer Churn Rate_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
-| _e.g. Repeat Purchase Rate_ | _What business outcome this tracks_ | _Show the exact formula or notebook reference_ |
+| Constructor Points Momentum | Tracks if a team is rising or declining YoY | `(Points_Y2 - Points_Y1) / Points_Y1 * 100` |
+| Result Volatility Index | Measures predictability and investment risk | `std(positionOrder)` per constructor per season |
+| Finish Rate | Reliability metric for sponsor exposure guarantee | `sum(finished) / count(races)` |
+| Position Delta Average | Measures race-day execution and race craft | `mean(grid - positionOrder)` |
+| Composite Investment Score | Final ranking based on weighted dimensions | `0.3*P + 0.25*C + 0.2*M + 0.15*R + 0.1*RC` |
 
 Document KPI logic clearly in `notebooks/04_statistical_analysis.ipynb` and `notebooks/05_final_load_prep.ipynb`.
 
@@ -113,10 +88,10 @@ Document KPI logic clearly in `notebooks/04_statistical_analysis.ipynb` and `not
 
 | Item | Details |
 |---|---|
-| **Dashboard URL** | _Paste Tableau Public link here_ |
-| **Executive View** | _Describe the high-level KPI summary view_ |
-| **Operational View** | _Describe the detailed drill-down view_ |
-| **Main Filters** | _List the interactive filters used_ |
+| **Dashboard URL** | [F1 Sponsorship Analytics Suite](https://public.tableau.com/app/profile/kushagra.maheshwari4048/vizzes) |
+| **Executive View** | Constructor Investment Scorecard — ROI vs Consistency ranking |
+| **Operational View** | Race Craft Analytics — Pit stop efficiency and DNF trends |
+| **Main Filters** | Constructor, Season/Year, Investment Tier (Gold/Silver/Bronze) |
 
 Store dashboard screenshots in [`tableau/screenshots/`](tableau/screenshots/) and document the public links in [`tableau/dashboard_links.md`](tableau/dashboard_links.md).
 
@@ -124,37 +99,31 @@ Store dashboard screenshots in [`tableau/screenshots/`](tableau/screenshots/) an
 
 ## Key Insights
 
-_List 8-12 major findings from the analysis, written in decision language. Each insight should tell the reader what to think or act upon, not merely describe a chart._
-
-1. _Insight 1_
-2. _Insight 2_
-3. _Insight 3_
-4. _Insight 4_
-5. _Insight 5_
-6. _Insight 6_
-7. _Insight 7_
-8. _Insight 8_
+1. **McLaren is the highest-value opportunity**: Currently the only "Gold" tier team with +128.95% YoY growth and perfect 2024 reliability.
+2. **Red Bull dominance is weakening**: Momentum has turned negative (–93.5 pts/yr) despite historical dominance, signaling a "sponsorship trap."
+3. **The grid is becoming more competitive**: Top team share of points fell to 25.05% in 2024, the lowest level in the Hybrid Era.
+4. **Consistency predicts performance**: Lower result volatility (R² = 0.28, p < 0.001) is strongly linked to higher championship points.
+5. **Operational discipline matters**: Faster pit stops (Cohen’s d = 1.26) are a statistically significant leading indicator of team quality.
+6. **Mercedes' decline is structural**: A confirmed negative trend (–29.84 pts/yr) suggests the "Silver Arrows" era has genuinely ended.
+7. **Sauber is a stable hedge**: Identified as the most predictable team on the grid (lowest volatility in 2024).
+8. **Diversification beats concentration**: A multi-team portfolio provides higher risk-adjusted exposure than a single-team bet.
 
 ---
 
 ## Recommendations
 
-_Provide 3-5 specific, actionable business recommendations, each linked directly to an insight above._
-
 | # | Insight | Recommendation | Expected Impact |
 |---|---|---|---|
-| 1 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
-| 2 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
-| 3 | _Which insight does this address?_ | _What should the stakeholder do?_ | _What measurable impact do you expect?_ |
+| 1 | McLaren Growth | Prioritise McLaren for premium partnerships | 2–3× higher TV coverage per dollar spent |
+| 2 | Portfolio Alpha | Build a diversified F1 sponsorship portfolio | ~67% reduction in single-team exposure risk |
+| 3 | Momentum Shift | Limit investment in Red Bull and Alpine | Avoid 20–30% "reputation premium" overpayment |
 
 ---
 
 ## Repository Structure
 
 ```text
-SectionName_TeamID_ProjectName/
-|
-|-- README.md
+SectionC_G13_F1/
 |
 |-- data/
 |   |-- raw/                         # Original dataset (never edited)
@@ -176,8 +145,8 @@ SectionName_TeamID_ProjectName/
 |
 |-- reports/
 |   |-- README.md
-|   |-- project_report_template.md
-|   `-- presentation_outline.md
+|   |-- Detailed_report_F1.pdf
+|   `-- concise_report.pdf
 |
 |-- docs/
 |   `-- data_dictionary.md
@@ -194,7 +163,7 @@ The project follows a structured 7-step workflow:
 
 1. **Define** - Sector selected, problem statement scoped, mentor approval obtained.
 2. **Extract** - Raw dataset sourced and committed to `data/raw/`; data dictionary drafted.
-3. **Clean and Transform** - Cleaning pipeline built in `notebooks/02_cleaning.ipynb` and optionally `scripts/etl_pipeline.py`.
+3. **Clean and Transform** - Cleaning pipeline built in `notebooks/02_cleaning.ipynb`.
 4. **Analyze** - EDA and statistical analysis performed in notebooks `03` and `04`.
 5. **Visualize** - Interactive Tableau dashboard built and published on Tableau Public.
 6. **Recommend** - 3-5 data-backed business recommendations delivered.
@@ -207,28 +176,10 @@ The project follows a structured 7-step workflow:
 | Tool | Status | Purpose |
 |---|---|---|
 | Python + Jupyter Notebooks | Mandatory | ETL, cleaning, analysis, and KPI computation |
-| Google Colab | Supported | Cloud notebook execution environment |
 | Tableau Public | Mandatory | Dashboard design, publishing, and sharing |
-| GitHub | Mandatory | Version control, collaboration, contribution audit |
-| SQL | Optional | Initial data extraction only, if documented |
+| GitHub | Mandatory | Version control and team collaboration |
 
-**Recommended Python libraries:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`, `statsmodels`
-
----
-
-## Evaluation Rubric
-
-| Area | Marks | Focus |
-|---|---|---|
-| Problem Framing | 10 | Is the business question clear and well-scoped? |
-| Data Quality and ETL | 15 | Is the cleaning pipeline thorough and documented? |
-| Analysis Depth | 25 | Are statistical methods applied correctly with insight? |
-| Dashboard and Visualization | 20 | Is the Tableau dashboard interactive and decision-relevant? |
-| Business Recommendations | 20 | Are insights actionable and well-reasoned? |
-| Storytelling and Clarity | 10 | Is the presentation professional and coherent? |
-| **Total** | **100** | |
-
-> Marks are awarded for analytical thinking and decision relevance, not chart quantity, visual decoration, or code length.
+**Recommended Python libraries:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`
 
 ---
 
@@ -236,70 +187,68 @@ The project follows a structured 7-step workflow:
 
 **GitHub Repository**
 
-- [ ] Public repository created with the correct naming convention (`SectionName_TeamID_ProjectName`)
-- [ ] All notebooks committed in `.ipynb` format
-- [ ] `data/raw/` contains the original, unedited dataset
-- [ ] `data/processed/` contains the cleaned pipeline output
-- [ ] `tableau/screenshots/` contains dashboard screenshots
-- [ ] `tableau/dashboard_links.md` contains the Tableau Public URL
-- [ ] `docs/data_dictionary.md` is complete
-- [ ] `README.md` explains the project, dataset, and team
-- [ ] All members have visible commits and pull requests
+- [x] Public repository created with the correct naming convention (`SectionName_TeamID_ProjectName`)
+- [x] All notebooks committed in `.ipynb` format
+- [x] `data/raw/` contains the original, unedited dataset
+- [x] `data/processed/` contains the cleaned pipeline output
+- [x] `tableau/screenshots/` contains dashboard screenshots
+- [x] `tableau/dashboard_links.md` contains the Tableau Public URL
+- [x] `docs/data_dictionary.md` is complete
+- [x] `README.md` explains the project, dataset, and team
+- [x] All members have visible commits and pull requests
 
 **Tableau Dashboard**
 
-- [ ] Published on Tableau Public and accessible via public URL
-- [ ] At least one interactive filter included
-- [ ] Dashboard directly addresses the business problem
+- [x] Published on Tableau Public and accessible via [Public URL](https://public.tableau.com/app/profile/kushagra.maheshwari4048/vizzes)
+- [x] At least one interactive filter included
+- [x] Dashboard directly addresses the business problem
 
 **Project Report**
 
-- [ ] Final report exported as PDF into `reports/`
-- [ ] Cover page, executive summary, sector context, problem statement
-- [ ] Data description, cleaning methodology, KPI framework
-- [ ] EDA with written insights, statistical analysis results
-- [ ] Dashboard screenshots and explanation
-- [ ] 8-12 key insights in decision language
-- [ ] 3-5 actionable recommendations with impact estimates
-- [ ] Contribution matrix matches GitHub history
+- [x] Final report exported as PDF: [Detailed Report](reports/Detailed_report_F1.pdf) | [Concise Report](reports/concise_report.pdf)
+- [x] Cover page, executive summary, sector context, problem statement
+- [x] Data description, cleaning methodology, KPI framework
+- [x] EDA with written insights, statistical analysis results
+- [x] Dashboard screenshots and explanation
+- [x] 8-12 key insights in decision language
+- [x] 3-5 actionable recommendations with impact estimates
+- [x] Contribution matrix matches GitHub history
 
 **Presentation Deck**
 
 - [ ] Final presentation exported as PDF into `reports/`
-- [ ] Title slide through recommendations, impact, limitations, and next steps
+- [x] Title slide through recommendations, impact, limitations, and next steps
 
 **Individual Assets**
 
-- [ ] DVA-oriented resume updated to include this capstone
-- [ ] Portfolio link or project case study added
+- [x] DVA-oriented resume updated: [Resume Folder](DVA-oriented-Resume/)
+- [x] Portfolio link or project case study added: [Portfolio Folder](DVA-focused-Portfolio/)
 
 ---
 
 ## Contribution Matrix
 
-This table must match evidence in GitHub Insights, PR history, and committed files.
+This table matches evidence in GitHub Insights, PR history, and committed files.
 
 | Team Member | Dataset and Sourcing | ETL and Cleaning | EDA and Analysis | Statistical Analysis | Tableau Dashboard | Report Writing | PPT and Viva |
 |---|---|---|---|---|---|---|---|
-| _Member 1_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 2_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 3_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 4_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 5_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
-| _Member 6_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ | _Owner / support_ |
+| **Priyanshu Tomar** | Core | Core | Assist | Assist | Assist | Core | Core |
+| **Piyush** | Assist | Assist | Assist | Core | Assist | Assist | Core |
+| **Kushagra Maheshwari** | Assist | Assist | Core | Assist | Core | Assist | Assist |
+| **Thejas** | Assist | Core | Assist | Core | Assist | Assist | Assist |
+| **Anurag Kumar** | Core | Assist | Assist | Assist | Assist | Core | Assist |
+| **Aditya Srivastava** | Assist | Assist | Assist | Assist | Core | Assist | Core |
 
 _Declaration: We confirm that the above contribution details are accurate and verifiable through GitHub Insights, PR history, and submitted artifacts._
 
-**Team Lead Name:** _____________________________
+**Team Lead Name:** Priyanshu Tomar
 
-**Date:** _______________
+**Date:** April 29, 2026
 
 ---
 
 ## Academic Integrity
 
-All analysis, code, and recommendations in this repository must be the original work of the team listed above. Free-riding is tracked via GitHub Insights and pull request history. Any mismatch between the contribution matrix and actual commit history may result in individual grade adjustments.
-
----
+All analysis, code, and recommendations in this repository must be the original work of the team listed above. Free-riding is tracked via GitHub Insights and pull request history.
 
 *Newton School of Technology - Data Visualization & Analytics | Capstone 2*
