@@ -17,5 +17,5 @@ Use this folder as a reminder for each student to convert the capstone into a po
 Add a short write-up in your personal portfolio site, Notion page, or PDF case study with a link back to this repository.
 
 ## Portfolio Link
-[Priyanshu Tomar Live Portfolio](https://priaynshu-dva.vercel.app/)
-[Aditya Srivastava Live Portfolio](https://aditya-1509.github.io/dva_portfolio/)
+- [Priyanshu Tomar Live Portfolio](https://priaynshu-dva.vercel.app/)
+- [Aditya Srivastava Live Portfolio](https://aditya-1509.github.io/dva_portfolio/)
