@@ -22,13 +22,13 @@
 
 | Role | Name | GitHub Username |
 |---|---|---|
-| Project Lead | Priyanshu Tomar | `r0c0y` |
-| Data Lead | Anurag Kumar | `anurag-github` |
-| ETL Lead | Priyanshu Tomar | `r0c0y` |
-| Analysis Lead | Thejas | `thejas-github` |
-| Visualization Lead | Kushagra Maheshwari | `kushagra-github` |
-| Strategy Lead | Piyush | `piyush-github` |
-| PPT and Quality Lead | Aditya Srivastava | `aditya-github` |
+| Project Lead | Priyanshu Tomar | [`r0c0y`](https://github.com/r0c0y) |
+| Data Lead | Anurag Kumar | [`Anuragkumar-687`](https://github.com/Anuragkumar-687) |
+| ETL Lead | Priyanshu Tomar | [`r0c0y`](https://github.com/r0c0y) |
+| Analysis Lead | Thejas | [`Thejas663`](https://github.com/Thejas663) |
+| Visualization Lead | Kushagra Maheshwari | [`kush11-m`](https://github.com/kush11-m) |
+| Strategy Lead | Piyush | [`PiyushY111`](https://github.com/PiyushY111) |
+| PPT and Quality Lead | Aditya Srivastava | [`aditya-1509`](https://github.com/aditya-1509) |
 
 ---
 
@@ -183,6 +183,20 @@ The project follows a structured 7-step workflow:
 
 ---
 
+## Submission Checklist
+
+**GitHub Repository**
+
+- [x] Public repository created with the correct naming convention (`SectionName_TeamID_ProjectName`)
+- [x] All notebooks committed in `.ipynb` format
+- [x] `data/raw/` contains the original, unedited dataset
+- [x] `data/processed/` contains the cleaned pipeline output
+- [x] `tableau/screenshots/` contains dashboard screenshots
+- [x] `tableau/dashboard_links.md` contains the Tableau Public URL
+- [x] `docs/data_dictionary.md` is complete
+- [x] `README.md` explains the project, dataset, and team
+- [x] All members have visible commits and pull requests
+
 **Tableau Dashboard**
 
 - [x] Published on Tableau Public and accessible via [Public URL](https://public.tableau.com/app/profile/kushagra.maheshwari4048/vizzes)
@@ -218,14 +232,16 @@ This table matches evidence in GitHub Insights, PR history, and committed files.
 
 | Team Member | Dataset and Sourcing | ETL and Cleaning | EDA and Analysis | Statistical Analysis | Tableau Dashboard | Report Writing | PPT and Viva |
 |---|---|---|---|---|---|---|---|
-| **Priyanshu Tomar** | Core | Core | Assist | Assist | Assist | Core | Core |
-| **Piyush** | Assist | Assist | Assist | Core | Assist | Assist | Core |
-| **Kushagra Maheshwari** | Assist | Assist | Core | Assist | Core | Assist | Assist |
-| **Thejas** | Assist | Core | Assist | Core | Assist | Assist | Assist |
-| **Anurag Kumar** | Core | Assist | Assist | Assist | Assist | Core | Assist |
-| **Aditya Srivastava** | Assist | Assist | Assist | Assist | Core | Assist | Core |
+| [**Priyanshu Tomar**](https://github.com/r0c0y) | Core | Core | Assist | Assist | Assist | Core | Core |
+| [**Piyush**](https://github.com/PiyushY111) | Assist | Assist | Assist | Core | Assist | Assist | Core |
+| [**Kushagra Maheshwari**](https://github.com/kush11-m) | Assist | Assist | Core | Assist | Core | Assist | Assist |
+| [**Thejas**](https://github.com/Thejas663) | Assist | Core | Assist | Core | Assist | Assist | Assist |
+| [**Anurag Kumar**](https://github.com/Anuragkumar-687) | Core | Assist | Assist | Assist | Assist | Core | Assist |
+| [**Aditya Srivastava**](https://github.com/aditya-1509) | Assist | Assist | Assist | Assist | Core | Assist | Core |
 
 _Declaration: We confirm that the above contribution details are accurate and verifiable through GitHub Insights, PR history, and submitted artifacts._
+
+**Team Lead Name:** Priyanshu Tomar
 
 **Date:** April 29, 2026
 
