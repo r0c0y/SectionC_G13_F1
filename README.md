@@ -1,7 +1,7 @@
-# F1 Constructor Sponsorship & Investment ROI Analytics
-## NST DVA Capstone 2 - Project Repository
+# [F1 Constructor Sponsorship & Investment ROI Analytics](https://public.tableau.com/app/profile/kushagra.maheshwari4048/vizzes)
+## DVA Capstone 2 - Project Repository
 
-> **Newton School of Technology | Data Visualization & Analytics**
+> **Data Visualization & Analytics**
 > A data-driven industry simulation using Python and Tableau to identify high-value sponsorship opportunities in Formula 1's Modern Hybrid Era.
 
 ---
@@ -183,6 +183,19 @@ The project follows a structured 7-step workflow:
 
 ---
 
+## Submission Checklist
+
+**GitHub Repository**
+
+- [x] Public repository created with the correct naming convention (`SectionName_TeamID_ProjectName`)
+- [x] All notebooks committed in `.ipynb` format
+- [x] `data/raw/` contains the original, unedited dataset
+- [x] `data/processed/` contains the cleaned pipeline output
+- [x] `tableau/screenshots/` contains dashboard screenshots
+- [x] `tableau/dashboard_links.md` contains the Tableau Public URL
+- [x] `docs/data_dictionary.md` is complete
+- [x] `README.md` explains the project, dataset, and team
+- [x] All members have visible commits and pull requests
 
 **Tableau Dashboard**
 
@@ -228,6 +241,7 @@ This table matches evidence in GitHub Insights, PR history, and committed files.
 
 _Declaration: We confirm that the above contribution details are accurate and verifiable through GitHub Insights, PR history, and submitted artifacts._
 
+**Team Lead Name:** Priyanshu Tomar
 
 **Date:** April 29, 2026
 
@@ -237,4 +251,4 @@ _Declaration: We confirm that the above contribution details are accurate and ve
 
 All analysis, code, and recommendations in this repository must be the original work of the team listed above. Free-riding is tracked via GitHub Insights and pull request history.
 
-*Newton School of Technology - Data Visualization & Analytics | Capstone 2*
+*Data Visualization & Analytics | Capstone 2*
