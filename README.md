@@ -216,7 +216,7 @@ The project follows a structured 7-step workflow:
 
 **Presentation Deck**
 
-- [ ] Final presentation exported as PDF into `reports/`
+- [x] Final presentation exported as PDF: [Presentation Deck](reports/f1-constructor-sponsorship-and-investment-roi-analytics.pdf)
 - [x] Title slide through recommendations, impact, limitations, and next steps
 
 **Individual Assets**
